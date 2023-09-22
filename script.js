@@ -114,6 +114,9 @@ function startGame() {
   // Hide the "Start Game" button
   document.getElementById("start-button").style.display = "none";
 
+  // Hide the top scores list
+  document.getElementById("top-scores-list").style.display = "none";
+
   // Display the quiz container
   document.getElementById("quiz").style.display = "block";
 
@@ -124,6 +127,7 @@ function startGame() {
   // Display the first question to the user
   displayQuestion();
 }
+
 
 function addToHighScores(playerName, playerScore) {
   const highScores = loadHighScores();
