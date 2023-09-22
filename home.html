@@ -3,19 +3,20 @@
 <head>
   <title>Quiz Game</title>
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #000;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-image: url("img/space_background.gif");
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+body {
+  font-family: sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("img/space_background.gif");
+  background-repeat: no-repeat;
+  background-size: cover; /* You can use 'contain' or specify a size like '100% 100%' as well */
+}
+
 
     #quiz {
       width: 500px;
@@ -37,31 +38,30 @@
       align-items: center;
     }
 
-    button {
-      width: 150px;
-      margin: 5px;
-      padding: 10px;
-      font-size: 16px;
-      background-color: transparent;
-      border: 2px solid white;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+   button {
+  width: 150px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent; /* Set background color to transparent */
+  border: 2px solid white; /* Add a solid white border */
+  color: white; /* Set text color to white */
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    #score {
-      position: absolute;
-      top: 32%;
-      right: 30%;
-    }
-
-    #retry-button {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+ #score {
+position: absolute; 
+top: 32%; 
+right: 30%;
+ }
+ #retry-button {
+  display: none; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+ }
 
   </style>
 </head>
@@ -71,14 +71,15 @@
     <div id="answer-options"></div>
   </div>
 
-  <div id="score">Score: <span id="current-score">0</span></div>
-  
-  <button id="start-button" onclick="startGame()">Start Game</button> <br><br><br>
-  <button id="top-scores-button" onclick="showTopScores()">Top Scores</button>
-  <ul id="top-scores-list" style="display: none;"></ul>
 
-  <button id="retry-button" style="" onclick="retryGame()">Retry</button> <!-- Moved the retry button below -->
-  
+ <div id="score" >Score: <span id="current-score">0</span></div>
+ <button id="retry-button" style="" onclick="retryGame()">Retry</button> 
+ 
+<button id="start-button" onclick="startGame()">Start Game</button>
+<ul id="top-scores-list" style="display: none;"></ul>
+
+
+
   <script src="script.js"></script>
 </body>
 </html>

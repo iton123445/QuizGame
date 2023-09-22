@@ -94,7 +94,6 @@ function retryGame() {
   // Reset the current question index and user score
   currentQuestionIndex = 0;
   userScore = 0;
-addToHighScores("Player", userScore);
 
   // Hide the "Retry" button
   document.getElementById("retry-button").style.display = "none";
@@ -128,7 +127,6 @@ function startGame() {
   displayQuestion();
 }
 
-
 function addToHighScores(playerName, playerScore) {
   const highScores = loadHighScores();
   highScores.push({ name: playerName, score: playerScore });
@@ -139,25 +137,6 @@ function addToHighScores(playerName, playerScore) {
   displayHighScores(); // Update the displayed high scores
 }
 
-function loadHighScores() {
-  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-  return highScores;
-}
 
-function displayHighScores() {
-  const highScores = loadHighScores();
-  const topScoresList = document.getElementById("top-scores-list");
-
-  topScoresList.innerHTML = "";
-
-  highScores
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 5)
-    .forEach((score, index) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = `${score.name}: ${score.score}`;
-      topScoresList.appendChild(listItem);
-    });
-}
 
 displayHighScores();
